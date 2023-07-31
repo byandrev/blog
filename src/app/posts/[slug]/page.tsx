@@ -2,8 +2,7 @@ import Head from "next/head";
 
 import Container from "@/components/Container";
 import { Post } from "@/interfaces/Post";
-import { getAllPosts, getPostBySlug } from "@/lib/getPosts";
-import markdownToHtml from "@/lib/markdownToHtml";
+import getPost from "./getPostService";
 
 type Params = {
   slug: string;
@@ -38,35 +37,4 @@ export default async function PostPage({ params }: { params: Params }) {
       </div>
     </Container>
   );
-}
-
-async function getPost(slug: string) {
-  const post = getPostBySlug(slug, [
-    "slug",
-    "title",
-    "excerpt",
-    "date",
-    "content",
-  ]);
-  const content = await markdownToHtml(post.content || "");
-
-  return {
-    ...post,
-    content,
-  };
-}
-
-export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
-
-  return {
-    paths: posts.map(({ slug }) => {
-      return {
-        params: {
-          slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
 }
