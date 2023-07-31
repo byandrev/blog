@@ -1,6 +1,6 @@
-import ErrorPage from "next/error";
 import Head from "next/head";
 
+import Container from "@/components/Container";
 import { Post } from "@/interfaces/Post";
 import { getAllPosts, getPostBySlug } from "@/lib/getPosts";
 import markdownToHtml from "@/lib/markdownToHtml";
@@ -10,12 +10,10 @@ type Params = {
 };
 
 export default async function PostPage({ params }: { params: Params }) {
-  console.log(params);
-
   const post: Post = await getPost(params.slug);
 
   return (
-    <div>
+    <Container>
       <Head>
         <title>{post.title} | My awesome blog</title>
       </Head>
@@ -34,11 +32,11 @@ export default async function PostPage({ params }: { params: Params }) {
 
           <div
             className="prose mt-10"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: post.content || "" }}
           />
         </article>
       </div>
-    </div>
+    </Container>
   );
 }
 
