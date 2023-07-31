@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className="py-6">
+    <header className="py-6 mb-6">
       <Container>
         <nav className="flex space-x-4">
           <Link href="/">About</Link>

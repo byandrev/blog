@@ -3,7 +3,7 @@ import Link from "./Link";
 
 function Footer() {
   return (
-    <footer className="py-6 text-sm">
+    <footer className="py-6 text-sm mt-10">
       <Container>
         <div className="flex justify-between">
           <p>Development by 💙</p>
