@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
   return (
     <header className="py-6">
       <Container>
@@ -13,3 +13,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;
