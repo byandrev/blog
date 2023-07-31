@@ -6,7 +6,7 @@ function Footer() {
     <footer className="py-6 text-sm mt-10">
       <Container>
         <div className="flex justify-between">
-          <p>Development by 💙</p>
+          <p>Desarrollado con 💙</p>
 
           <p>
             <Link href="https://github.com/byandrev/blog" target="_blank">

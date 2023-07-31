@@ -6,8 +6,8 @@ function Header() {
     <header className="py-6 mb-6">
       <Container>
         <nav className="flex space-x-4">
-          <Link href="/">About</Link>
-          <Link href="/posts">Posts</Link>
+          <Link href="/">Sobre mí</Link>
+          <Link href="/posts">Artículos</Link>
         </nav>
       </Container>
     </header>
