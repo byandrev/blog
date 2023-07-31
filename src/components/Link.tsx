@@ -7,12 +7,20 @@ type LinkProps = {
   href: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   className?: string;
+  color?: string;
 };
 
-const Link: FC<LinkProps> = ({ children, href, target, as, className }) => {
+const Link: FC<LinkProps> = ({
+  children,
+  href,
+  target,
+  as,
+  color,
+  className,
+}) => {
   return (
     <LinkNext
-      className={`text-primary hover:underline ${className}`}
+      className={`${color || "text-sky-700"} hover:underline ${className}`}
       as={as}
       href={href}
       target={target}
