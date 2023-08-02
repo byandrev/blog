@@ -5,6 +5,7 @@ import "./globals.css";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ThemeProvider } from "../context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +24,11 @@ export default function RootLayout({
       <body
         className={`bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 antialiased" ${inter.className}`}
       >
-        <Header />
-        <Container>{children}</Container>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <Container>{children}</Container>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

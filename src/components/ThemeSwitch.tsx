@@ -31,7 +31,9 @@ const ThemeSwitch = () => {
           <div className="block h-6 w-10 rounded-full bg-[#eee]"></div>
           <div
             className={`dot absolute top-1 h-4 w-4 rounded-full ${
-              isChecked ? "translate-x-5 bg-sky-700" : "translate-x-1 bg-[#fff]"
+              theme === "dark"
+                ? "translate-x-5 bg-sky-700"
+                : "translate-x-1 bg-[#fff]"
             } transition-transform`}
           ></div>
         </div>
