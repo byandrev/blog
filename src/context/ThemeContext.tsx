@@ -8,12 +8,32 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
+
+  useEffect(() => {
+    const isThemeOnLocalStorage = window.localStorage.getItem("theme");
+
+    if (isThemeOnLocalStorage) {
+      setTheme(isThemeOnLocalStorage);
+      return;
+    }
+
+    const isSystemThemeDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (isSystemThemeDark) {
+      setTheme("dark");
+      return;
+    }
+
+    setTheme("light");
+  }, []);
 
   useEffect(() => {
     const root = window.document.documentElement;
