@@ -10,15 +10,17 @@ type PostCardProps = {
 const PostCard: FC<PostCardProps> = ({ post }) => {
   return (
     <article key={post.slug} className="mb-10">
-      <Link
-        as={`/posts/${post.slug}`}
-        href="/posts/[slug]"
-        className="text-lg leading-6 font-bold"
-      >
-        {post.title}
-      </Link>
+      <h2>
+        <Link
+          as={`/posts/${post.slug}`}
+          href="/posts/[slug]"
+          className="text-2xl leading-6 font-bold"
+        >
+          {post.title}
+        </Link>
+      </h2>
       <p>{post.excerpt}</p>
-      <div className="text-gray-400">
+      <div className="text-gray-400 text-sm">
         <time>{post.date && new Date(post.date).toDateString()}</time>
       </div>
     </article>
