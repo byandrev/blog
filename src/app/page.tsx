@@ -6,13 +6,19 @@ function Home() {
       <Container>
         <div className="space-y-6">
           <h1 className="text-2xl font-bold">
-            Hola, soy Junior Software Engineer. Me encanta trabajar con
-            Javascript y React.js. Me gusta aprender y compartir.
+            Hola, soy Andres Parra, Softwart Engineer
           </h1>
+
           <p>
-            Me gusta siempre estar aprendiendo y compartir mis conocimientos,
-            por eso existe este blog. Me considero fan del open source y del
+            Soy un desarrollador de software apasionado por la tecnología y el
+            desarrollo web. Me gusta siempre estar aprendiendo y compartiendo mis
+            conocimientos, por eso existe este blog. Fan del open source y del
             café ☕.
+          </p>
+
+          <p>
+            Cada línea de código es una oportunidad para crear magia y dar vida
+            a ideas innovadoras.
           </p>
         </div>
       </Container>
