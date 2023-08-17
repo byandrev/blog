@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
+import { Metadata } from "next";
 
-function Home() {
+export default function Home() {
   return (
     <>
       <Container>
@@ -11,9 +12,9 @@ function Home() {
 
           <p>
             Soy un desarrollador de software apasionado por la tecnología y el
-            desarrollo web. Me gusta siempre estar aprendiendo y compartiendo mis
-            conocimientos, por eso existe este blog. Fan del open source y del
-            café ☕.
+            desarrollo web. Me gusta siempre estar aprendiendo y compartiendo
+            mis conocimientos, por eso existe este blog. Fan del open source y
+            del café ☕.
           </p>
 
           <p>
@@ -26,4 +27,8 @@ function Home() {
   );
 }
 
-export default Home;
+export const metadata: Metadata = {
+  title: "Andres Parra - Software Engineer | @byandrev",
+  description:
+    "Desarrollador de software apasionado por la tecnología y el desarrollo web. | Andres Parra - Software Engineer | @byandrev",
+};
