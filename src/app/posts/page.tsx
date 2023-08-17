@@ -9,7 +9,7 @@ export default function Posts() {
       {posts.length ? (
         posts.map((post) => <PostCard key={post.slug} post={post} />)
       ) : (
-        <p>Todavía no se ha publicado ningún artículo/</p>
+        <p>Todavía no se ha publicado ningún artículo</p>
       )}
     </div>
   );
