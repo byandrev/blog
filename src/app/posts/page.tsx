@@ -1,5 +1,6 @@
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/getPosts";
+import { Metadata } from "next";
 
 export default function Posts() {
   const posts = getAllPosts(["slug", "title", "excerpt", "date"]);
@@ -14,3 +15,9 @@ export default function Posts() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Blog - Andres Parra | @byandrev",
+  description:
+    "Artículos sobre desarrollo web, javascript, reactjs y más. | Andres Parra - Software Engineer | @byandrev",
+};
