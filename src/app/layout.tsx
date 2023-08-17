@@ -9,11 +9,6 @@ import { ThemeProvider } from "../context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "byandrev - Andres Parra Garzon",
-  description: "Blog de Andres Parra Garzon",
-};
-
 export default function RootLayout({
   children,
 }: {
