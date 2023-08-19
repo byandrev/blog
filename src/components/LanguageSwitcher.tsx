@@ -21,7 +21,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
   };
 
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
