@@ -1,12 +1,17 @@
-import Container from "@/components/Container";
-import Link from "./Link";
+"use client";
 
-function Footer() {
+import { useTranslation } from "@/app/i18n/client";
+import Container from "@/components/Container";
+import Link from "@/components/Link";
+
+function Footer({ lang }: { lang: string }) {
+  const { t } = useTranslation(lang);
+
   return (
     <footer className="py-6 text-sm mt-10">
       <Container>
         <div className="flex justify-between">
-          <p>Desarrollado con 💙</p>
+          <p>{t("footer.text")}</p>
 
           <p>
             <Link href="https://github.com/byandrev/blog" target="_blank">

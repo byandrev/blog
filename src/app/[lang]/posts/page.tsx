@@ -1,6 +1,7 @@
+import { Metadata } from "next";
+
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/getPosts";
-import { Metadata } from "next";
 
 export default function Posts() {
   const posts = getAllPosts(["slug", "title", "excerpt", "date"]);

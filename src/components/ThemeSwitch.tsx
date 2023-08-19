@@ -28,7 +28,7 @@ const ThemeSwitch = () => {
             checked={isChecked}
             onChange={handleCheckboxChange}
           />
-          <div className="block h-6 w-10 rounded-full bg-[#eee]"></div>
+          <div className="block h-6 w-10 rounded-full bg-gray-200 dark:bg-slate-800"></div>
           <div
             className={`dot absolute top-1 h-4 w-4 rounded-full ${
               theme === "dark"

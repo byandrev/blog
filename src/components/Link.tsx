@@ -1,5 +1,7 @@
-import { FC, ReactNode } from "react";
+"use client";
+
 import LinkNext from "next/link";
+import { FC, ReactNode } from "react";
 
 type LinkProps = {
   children: ReactNode;
@@ -22,7 +24,8 @@ const Link: FC<LinkProps> = ({
     <LinkNext
       className={`${color || "text-sky-700"} hover:underline ${className}`}
       as={as}
-      href={href}
+      href={href} 
+      locale={false}
       target={target}
     >
       {children}
