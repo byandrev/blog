@@ -3,8 +3,12 @@ import { Metadata } from "next";
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/getPosts";
 
-export default function Posts() {
-  const posts = getAllPosts(["slug", "title", "excerpt", "date"]);
+type Props = {
+  params: { lang: string };
+}
+
+export default function Posts({ params: { lang } } : Props) {
+  const posts = getAllPosts(["slug", "title", "excerpt", "date"], lang);
 
   return (
     <div>

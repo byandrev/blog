@@ -1,14 +1,14 @@
 import { getPostBySlug } from "@/lib/getPosts";
 import markdownToHtml from "@/lib/markdownToHtml";
 
-async function getPost(slug: string) {
+async function getPost(slug: string, lang: string) {
   const post = getPostBySlug(slug, [
     "slug",
     "title",
     "excerpt",
     "date",
     "content",
-  ]);
+  ], lang);
   const content = await markdownToHtml(post.content || "");
 
   return {

@@ -3,11 +3,11 @@ import { Post } from "@/interfaces/Post";
 import getPost from "./getPostService";
 
 type Props = {
-  params: { slug: string };
+  params: { slug: string, lang: string; };
 };
 
-export default async function PostPage({ params }: Props) {
-  const post: Post = await getPost(params.slug);
+export default async function PostPage({ params: { slug, lang } }: Props) {
+  const post: Post = await getPost(slug, lang);
 
   return (
     <Container>
@@ -35,8 +35,8 @@ export default async function PostPage({ params }: Props) {
   );
 }
 
-export async function generateMetadata({ params }: Props) {
-  const post: Post = await getPost(params.slug);
+export async function generateMetadata({ params: { slug, lang } }: Props) {
+  const post: Post = await getPost(slug, lang);
 
   return {
     title: post.title,
