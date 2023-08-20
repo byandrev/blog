@@ -22,9 +22,9 @@ const Link: FC<LinkProps> = ({
 }) => {
   return (
     <LinkNext
-      className={`${color || "text-sky-700"} hover:underline ${className}`}
+      className={`${color || "text-primary"} hover:underline ${className}`}
       as={as}
-      href={href} 
+      href={href}
       locale={false}
       target={target}
     >

@@ -32,7 +32,7 @@ const ThemeSwitch = () => {
           <div
             className={`dot absolute top-1 h-4 w-4 rounded-full ${
               theme === "dark"
-                ? "translate-x-5 bg-sky-700"
+                ? "translate-x-5 bg-primary"
                 : "translate-x-1 bg-[#fff]"
             } transition-transform`}
           ></div>

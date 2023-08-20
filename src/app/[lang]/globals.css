@@ -4,5 +4,5 @@
 
 ::selection {
   color: white;
-  background: theme("colors.sky.700");
+  background: theme("colors.primary");
 }
