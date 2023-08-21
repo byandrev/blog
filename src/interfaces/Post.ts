@@ -3,7 +3,7 @@ export type Post = {
   title?: string;
   author?: string;
   date?: Date;
-  content?: string;
+  content?: any;
   excerpt?: string;
   [key: string]: any;
 };

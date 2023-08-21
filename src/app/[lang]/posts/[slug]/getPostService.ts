@@ -1,5 +1,6 @@
+import { serialize } from "next-mdx-remote/serialize";
+
 import { getPostBySlug } from "@/lib/getPosts";
-import markdownToHtml from "@/lib/markdownToHtml";
 
 async function getPost(slug: string, lang: string) {
   const post = getPostBySlug(
@@ -10,7 +11,7 @@ async function getPost(slug: string, lang: string) {
 
   if (!post) return null;
 
-  const content = await markdownToHtml(post.content || "");
+  const content = await serialize(post.content || "");
 
   return {
     ...post,

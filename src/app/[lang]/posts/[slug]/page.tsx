@@ -1,8 +1,9 @@
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import Container from "@/components/Container";
 import { Post } from "@/interfaces/Post";
 import getPost from "./getPostService";
+import PostContent from "@/components/PostContent";
 
 type Props = {
   params: { slug: string; lang: string };
@@ -32,10 +33,7 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
               </time>
             </header>
 
-            <div
-              className="prose mt-10"
-              dangerouslySetInnerHTML={{ __html: post.content || "" }}
-            />
+            <PostContent content={post.content} />
           </article>
         </div>
       )}

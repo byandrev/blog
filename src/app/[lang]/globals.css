@@ -6,3 +6,12 @@
   color: white;
   background: theme("colors.primary");
 }
+
+.post-content a {
+  color: theme("colors.primary");
+  text-decoration: underline;
+}
+
+.post-content a:hover {
+  color: theme("colors.primaryAlt");
+}
