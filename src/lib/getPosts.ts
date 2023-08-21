@@ -10,30 +10,38 @@ export function getPostSlugs(lang: string) {
   return fs.readdirSync(`${postsDirectory}/${lang}`);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = [], lang: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(`${postsDirectory}/${lang}`, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+export function getPostBySlug(
+  slug: string,
+  fields: string[] = [],
+  lang: string,
+) {
+  try {
+    const realSlug = slug.replace(/\.md$/, "");
+    const fullPath = join(`${postsDirectory}/${lang}`, `${realSlug}.md`);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  const { data, content } = matter(fileContents);
+    const { data, content } = matter(fileContents);
 
-  const items: Post = {};
+    const items: Post = {};
 
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = realSlug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
+    // Ensure only the minimal needed data is exposed
+    fields.forEach((field) => {
+      if (field === "slug") {
+        items[field] = realSlug;
+      }
+      if (field === "content") {
+        items[field] = content;
+      }
 
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
-  });
+      if (typeof data[field] !== "undefined") {
+        items[field] = data[field];
+      }
+    });
 
-  return items;
+    return items;
+  } catch {
+    return null;
+  }
 }
 
 export function getAllPosts(fields: string[] = [], lang: string) {

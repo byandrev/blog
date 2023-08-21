@@ -20,7 +20,7 @@ type Props = {
   params: { lang: string };
 };
 
-async function RootLayout({ children, params: { lang } }: Props) {
+async function RootLayout({ children, params: { lang = "es" } }: Props) {
   return (
     <html lang={lang} dir={dir(lang)}>
       <body

@@ -5,15 +5,21 @@ import { getAllPosts } from "@/lib/getPosts";
 
 type Props = {
   params: { lang: string };
-}
+};
 
-export default function Posts({ params: { lang } } : Props) {
+export default function Posts({ params: { lang } }: Props) {
   const posts = getAllPosts(["slug", "title", "excerpt", "date"], lang);
 
   return (
     <div>
       {posts.length ? (
-        posts.map((post) => <PostCard key={post.slug} post={post} />)
+        posts.map((post) => {
+          if (post) {
+            return <PostCard key={post.slug} post={post} />;
+          } else {
+            return null;
+          }
+        })
       ) : (
         <p>Todavía no se ha publicado ningún artículo</p>
       )}
