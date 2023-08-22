@@ -7,11 +7,17 @@
   background: theme("colors.primary");
 }
 
-.post-content a {
-  color: theme("colors.primary");
-  text-decoration: underline;
+.img {
+  width: 100%;
 }
 
-.post-content a:hover {
-  color: theme("colors.primaryAlt");
+.img > div {
+  position: unset;
+}
+
+.img img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }

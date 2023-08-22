@@ -24,7 +24,7 @@ async function RootLayout({ children, params: { lang = "es" } }: Props) {
   return (
     <html lang={lang} dir={dir(lang)}>
       <body
-        className={`bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 antialiased" ${inter.className}`}
+        className={`bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 antialiased" ${inter.className}`}
       >
         <ThemeProvider>
           <Header lang={lang} />

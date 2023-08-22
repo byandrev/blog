@@ -19,10 +19,10 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
           {post.title}
         </Link>
       </h2>
-      <p>{post.excerpt}</p>
-      <div className="text-gray-400 text-sm">
+      <div className="text-gray-500 dark:text-slate-400 text-sm mb-1">
         <time>{post.date && new Date(post.date).toDateString()}</time>
       </div>
+      <p>{post.excerpt}</p>
     </article>
   );
 };

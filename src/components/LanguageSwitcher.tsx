@@ -25,7 +25,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="inline-flex gap-2 items-center justify-center w-full rounded-md px-2 py-0 h-[23px] bg-gray-200 text-xs font-medium text-gray-700 dark:bg-slate-800 dark:text-gray-200"
+        className="inline-flex gap-2 items-center justify-center w-full rounded-md px-2 py-0 h-[23px] bg-gray-200 text-xs font-medium text-gray-700 dark:bg-slate-900 dark:text-gray-200"
         id={lang}
         aria-expanded={isOpen}
       >

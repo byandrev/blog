@@ -24,14 +24,14 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
             <header>
               <h1 className="text-4xl font-bold">{post.title}</h1>
 
-              {post.excerpt ? (
-                <p className="mt-2 text-xl">{post.excerpt}</p>
-              ) : null}
-
-              <time className="flex mt-2 text-gray-400">
+              <time className="flex mt-2 text-gray-500 dark:text-slate-400">
                 {post.date && new Date(post.date).toDateString()}
               </time>
+
+              {post.excerpt ? <p className="mt-2">{post.excerpt}</p> : null}
             </header>
+
+            <hr className="mt-4 border-gray-200 border-[1.5px] dark:border-slate-700" />
 
             <PostContent content={post.content} />
           </article>
