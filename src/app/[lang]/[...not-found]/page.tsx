@@ -1,7 +1,7 @@
-"use client";
+import { Metadata } from "next";
+import Image from "next/image";
 
 import Container from "@/components/Container";
-import Image from "next/image";
 
 export default function NotFound() {
   return (
@@ -18,3 +18,7 @@ export default function NotFound() {
     </Container>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Page Not Found | @byandrev",
+};
