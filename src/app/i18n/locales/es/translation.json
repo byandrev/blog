@@ -12,6 +12,7 @@
   },
 
   "not_found": "Página no encontrada",
+  "post_not_found": "Artículo no encontrado",
 
   "footer": { "text": "Desarrollado con 💚" }
 }

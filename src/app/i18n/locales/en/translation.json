@@ -12,6 +12,7 @@
   },
 
   "not_found": "Not found",
+  "post_not_found": "Post not found",
 
   "footer": { "text": "Developed with 💚" }
 }
