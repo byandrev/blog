@@ -12,6 +12,10 @@ type Props = {
 export default async function PostPage({ params: { slug, lang } }: Props) {
   const post: Post | null = await getPost(slug, lang);
 
+  if (!post) {
+    redirect("/not-found");
+  }
+
   return (
     <Container>
       {post && (
