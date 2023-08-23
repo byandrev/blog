@@ -19,9 +19,18 @@ export default function PostContent({ content }: { content: any }) {
           h2: Title.h2,
           h3: Title.h3,
           h4: Title.h4,
+
           img: Image,
           Image,
           Video,
+
+          ol: ({ children }) => (
+            <ol className="list-decimal list-inside">{children}</ol>
+          ),
+
+          ul: ({ children }) => (
+            <ul className="list-disc list-inside ml-2">{children}</ul>
+          ),
         }}
       />
     </div>
