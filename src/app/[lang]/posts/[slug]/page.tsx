@@ -1,9 +1,8 @@
-import { redirect } from "next/navigation";
-
+import { useTranslation } from "@/app/i18n";
 import Container from "@/components/Container";
+import PostContent from "@/components/PostContent";
 import { Post } from "@/interfaces/Post";
 import getPost from "./getPostService";
-import PostContent from "@/components/PostContent";
 
 type Props = {
   params: { slug: string; lang: string };
@@ -12,13 +11,9 @@ type Props = {
 export default async function PostPage({ params: { slug, lang } }: Props) {
   const post: Post | null = await getPost(slug, lang);
 
-  if (!post) {
-    redirect("/not-found");
-  }
-
   return (
     <Container>
-      {post && (
+      {post ? (
         <div>
           <article>
             <header>
@@ -36,6 +31,8 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
             <PostContent content={post.content} />
           </article>
         </div>
+      ) : (
+        <div></div>
       )}
     </Container>
   );
@@ -43,15 +40,16 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
 
 export async function generateMetadata({ params: { slug, lang } }: Props) {
   const post: Post | null = await getPost(slug, lang);
+  const { t } = await useTranslation(lang);
 
   if (!post) {
     return {
-      title: "404 - Not found",
+      title: `404 | ${t("not_found")} - @byandrev`,
     };
   }
 
   return {
-    title: post.title,
+    title: post.title + " - @byandrev",
     description: post.excerpt,
   };
 }
