@@ -15,7 +15,7 @@ export default function Posts({ params: { lang } }: Props) {
       {posts.length ? (
         posts.map((post) => {
           if (post) {
-            return <PostCard key={post.slug} post={post} />;
+            return <PostCard key={post.slug} post={post} lang={lang} />;
           } else {
             return null;
           }

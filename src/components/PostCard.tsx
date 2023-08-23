@@ -5,15 +5,16 @@ import Link from "./Link";
 
 type PostCardProps = {
   post: Post;
+  lang: string;
 };
 
-const PostCard: FC<PostCardProps> = ({ post }) => {
+const PostCard: FC<PostCardProps> = ({ post, lang }) => {
   return (
     <article key={post.slug} className="mb-10">
       <h2>
         <Link
-          as={`/posts/${post.slug}`}
-          href="/posts/[slug]"
+          as={`/${lang}/posts/${post.slug}`}
+          href={`/${lang}/posts/[slug]`}
           className="text-2xl leading-6 font-bold"
         >
           {post.title}
