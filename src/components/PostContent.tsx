@@ -7,6 +7,7 @@ import Link from "./post/Link";
 import Paragraph from "./post/Paragraph";
 import { Title } from "./post/Title";
 import Video from "./post/Video";
+import Code from "./post/Code";
 
 export default function PostContent({ content }: { content: any }) {
   return (
@@ -31,6 +32,17 @@ export default function PostContent({ content }: { content: any }) {
           ul: ({ children }) => (
             <ul className="list-disc list-inside ml-2">{children}</ul>
           ),
+
+          code: ({ children, className }) => {
+            return (
+              <Code
+                language={className?.split("-")[1] || "javascript"}
+                className="mb-4"
+              >
+                {children as string}
+              </Code>
+            );
+          },
         }}
       />
     </div>
