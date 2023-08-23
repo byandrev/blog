@@ -11,5 +11,7 @@
     "posts": "Artículos"
   },
 
+  "not_found": "Página no encontrada",
+
   "footer": { "text": "Desarrollado con 💚" }
 }

@@ -11,5 +11,7 @@
     "posts": "Posts"
   },
 
+  "not_found": "Not found",
+
   "footer": { "text": "Developed with 💚" }
 }
