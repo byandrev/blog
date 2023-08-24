@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -29,16 +28,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
         id={lang}
         aria-expanded={isOpen}
       >
-        <Image
-          src={
-            lang === "es"
-              ? "https://flagicons.lipis.dev/flags/4x3/es.svg"
-              : "https://flagicons.lipis.dev/flags/4x3/us.svg"
-          }
-          width={15}
-          height={15}
-          alt={lang === "es" ? t("spanish") : t("english")}
-        />
+        <span className="mr-1">{lang === "es" ? "🇪🇸" : "🇺🇸"}</span>
 
         {lang.toLocaleUpperCase()}
 
@@ -73,20 +63,11 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
                     lang === language
                       ? "bg-gray-100 text-gray-700 dark:text-gray-200 dark:bg-slate-800"
                       : "text-gray-700 dark:text-gray-200"
-                  } rounded-md block px-4 py-2 text-sm text-start items-center inline-flex hover:bg-gray-100 dark:hover:bg-slate-800 `}
+                  } rounded-md px-4 py-2 text-sm text-start items-center inline-flex hover:bg-gray-100 dark:hover:bg-slate-800 `}
                   role="menuitem"
                 >
                   <span className="truncate flex gap-2">
-                    <Image
-                      src={
-                        language === "es"
-                          ? "https://flagicons.lipis.dev/flags/4x3/es.svg"
-                          : "https://flagicons.lipis.dev/flags/4x3/us.svg"
-                      }
-                      width={20}
-                      height={20}
-                      alt={language === "es" ? t("spanish") : t("english")}
-                    />
+                    <span className="mr-1">{language === "es" ? "🇪🇸" : "🇺🇸"}</span>
                     {language === "es" ? t("spanish") : t("english")}
                   </span>
                 </button>
