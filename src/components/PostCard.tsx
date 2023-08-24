@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 import { FC } from "react";
 
 import { Post } from "@/interfaces/Post";
@@ -21,7 +23,9 @@ const PostCard: FC<PostCardProps> = ({ post, lang }) => {
         </Link>
       </h2>
       <div className="text-gray-500 dark:text-slate-400 text-sm mb-1">
-        <time>{post.date && new Date(post.date).toDateString()}</time>
+        <time className="capitalize">
+          {post.date && dayjs(post.date).locale(lang).format("MMMM D, YYYY")}
+        </time>
       </div>
       <p>{post.excerpt}</p>
     </article>
