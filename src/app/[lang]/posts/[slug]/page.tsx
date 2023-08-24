@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 import Image from "next/image";
 
 import { useTranslation } from "@/app/i18n";
@@ -23,8 +25,9 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
             <header>
               <h1 className="text-4xl font-bold">{post.title}</h1>
 
-              <time className="flex mt-2 text-gray-500 dark:text-slate-400">
-                {post.date && new Date(post.date).toDateString()}
+              <time className="flex capitalize mt-2 text-gray-500 dark:text-slate-400">
+                {post.date &&
+                  dayjs(post.date).locale(lang).format("MMMM D, YYYY")}
               </time>
 
               {post.excerpt ? <p className="mt-2">{post.excerpt}</p> : null}
