@@ -29,10 +29,6 @@ export const USER_LINKS: Link[] = [
     text: "Ko-fi",
     url: "https://ko-fi.com/byandrev",
   },
-  {
-    text: "last.fm",
-    url: "https://www.last.fm/user/byandrev",
-  },
 ];
 
 export const USER_PROJECTS: Project[] = [
