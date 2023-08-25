@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { IoCopy, IoCopyOutline } from "react-icons/io5";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import {
   atomOneDark,
@@ -20,16 +22,35 @@ export default function Code({
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    if (window) {
+      navigator.clipboard.writeText(children.slice(0, -1)).then(() => {
+        setCopied(true);
+
+        setTimeout(() => setCopied(false), 1000);
+      });
+    }
+  };
+
   return (
     <div
-      className={`rounded-md overflow-hidden shadow-2xl shadow-gray-300 dark:shadow-neutral-950 ${className}`}
+      className={`relative rounded-md overflow-hidden shadow-2xl shadow-gray-300 dark:shadow-neutral-950 ${className}`}
     >
+      <button
+        className="bg-primaryAlt text-sm py-1 px-2 rounded absolute right-4 top-2 hover:bg-primary text-white transition-all"
+        onClick={handleCopy}
+      >
+        {copied ? <IoCopy /> : <IoCopyOutline />}
+      </button>
+
       <SyntaxHighlighter
         language={language}
         showLineNumbers
         style={isDark ? atomOneDark : atomOneLight}
       >
-        {children}
+        {children.slice(0, -1)}
       </SyntaxHighlighter>
     </div>
   );
