@@ -23,8 +23,11 @@ export default async function Home({ params: { lang } }: Props) {
   );
 }
 
-export const metadata: Metadata = {
-  title: "Andres Parra - Software Engineer | @byandrev",
-  description:
-    "Desarrollador de software apasionado por la tecnología y el desarrollo web. | Andres Parra - Software Engineer | @byandrev",
-};
+export async function generateMetadata({ params: { lang } }: Props) {
+  const { t } = await useTranslation(lang);
+
+  return {
+    title: "Andres Parra - Software Engineer | @byandrev",
+    description: t("description") + "Andres Parra - Software Engineer",
+  };
+}
