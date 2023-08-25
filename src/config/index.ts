@@ -8,7 +8,7 @@ type Project = {
   url: string;
 };
 
-export const userLinks: Link[] = [
+export const USER_LINKS: Link[] = [
   {
     text: "Github",
     url: "https://github.com/byandrev",
@@ -19,7 +19,19 @@ export const userLinks: Link[] = [
   },
   {
     text: "Instagram",
-    url: "https://instagram.com/byandrev",
+    url: "https://instagram.com/andresparra_gar",
+  },
+  {
+    text: "Linkedin",
+    url: "https://www.linkedin.com/in/byandrev/",
+  },
+  {
+    text: "Ko-fi",
+    url: "https://ko-fi.com/byandrev",
+  },
+  {
+    text: "last.fm",
+    url: "https://www.last.fm/user/byandrev",
   },
 ];
 

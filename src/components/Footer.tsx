@@ -3,7 +3,7 @@
 import { useTranslation } from "@/app/i18n/client";
 import Container from "@/components/Container";
 import Link from "@/components/Link";
-import { userLinks } from "@/config";
+import { USER_LINKS } from "@/config";
 
 function Footer({ lang }: { lang: string }) {
   const { t } = useTranslation(lang);
@@ -15,7 +15,7 @@ function Footer({ lang }: { lang: string }) {
           <p>{t("footer.text")}</p>
 
           <div className="flex gap-4">
-            {userLinks.map((link) => (
+            {USER_LINKS.slice(0, 3).map((link) => (
               <p key={link.text}>
                 <Link href={link.url} target="_blank">
                   {link.text}

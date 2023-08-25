@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import Link from "@/components/Link";
-import { USER_PROJECTS } from "@/config";
+import { USER_LINKS, USER_PROJECTS } from "@/config";
 import { useTranslation } from "../i18n";
 
 type Props = {
@@ -24,6 +24,18 @@ export default async function Home({ params: { lang } }: Props) {
               <li key={project.url}>
                 <Link href={project.url} target="_blank">
                   {project.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <p>{t("social_links")}:</p>
+
+          <ul className="flex gap-3 pl-2">
+            {USER_LINKS.map((project) => (
+              <li key={project.url}>
+                <Link href={project.url} target="_blank">
+                  {project.text}
                 </Link>
               </li>
             ))}
