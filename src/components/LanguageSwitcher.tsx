@@ -24,7 +24,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="inline-flex gap-2 items-center justify-center w-full rounded-md px-2 py-0 h-[23px] bg-gray-200 text-xs font-medium text-gray-700 dark:bg-slate-900 dark:text-gray-200"
+        className="inline-flex gap-2 items-center justify-center w-full rounded-md px-2 py-0 h-[23px] bg-gray-200 text-xs font-medium text-gray-700 dark:bg-neutral-800 dark:text-gray-200"
         id={lang}
         aria-expanded={isOpen}
       >
@@ -49,7 +49,7 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
 
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-96 rounded-md shadow-lg bg-white dark:bg-slate-700 ring-1 ring-black ring-opacity-5"
+          className="origin-top-right absolute right-0 mt-2 w-96 rounded-md shadow-lg bg-white dark:bg-neutral-800 ring-1 ring-black ring-opacity-5"
           role="menu"
           aria-orientation="vertical"
         >
@@ -61,13 +61,15 @@ export default function LanguageSwitcher({ lang }: { lang: string }) {
                   onClick={() => handleLanguageChange(language)}
                   className={`${
                     lang === language
-                      ? "bg-gray-100 text-gray-700 dark:text-gray-200 dark:bg-slate-800"
+                      ? "bg-gray-100 text-gray-700 dark:text-gray-200 dark:bg-neutral-900"
                       : "text-gray-700 dark:text-gray-200"
-                  } rounded-md px-4 py-2 text-sm text-start items-center inline-flex hover:bg-gray-100 dark:hover:bg-slate-800 `}
+                  } rounded-md px-4 py-2 text-sm text-start items-center inline-flex hover:bg-gray-100 dark:hover:bg-neutral-900 `}
                   role="menuitem"
                 >
                   <span className="truncate flex gap-2">
-                    <span className="mr-1">{language === "es" ? "🇪🇸" : "🇺🇸"}</span>
+                    <span className="mr-1">
+                      {language === "es" ? "🇪🇸" : "🇺🇸"}
+                    </span>
                     {language === "es" ? t("spanish") : t("english")}
                   </span>
                 </button>

@@ -7,7 +7,7 @@ export default function Image({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         fill={true}
-        className="rounded-md shadow-2xl shadow-gray-300 dark:shadow-slate-900"
+        className="rounded-md shadow-2xl shadow-gray-300 dark:shadow-neutral-950"
       />
 
       <p className="text-center text-xs mt-4 text-gray-700 dark:text-white">

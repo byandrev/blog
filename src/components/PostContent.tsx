@@ -37,7 +37,7 @@ export default function PostContent({ content }: { content: any }) {
             return (
               <Code
                 language={className?.split("-")[1] || "javascript"}
-                className="mb-4"
+                className="my-8"
               >
                 {children as string}
               </Code>

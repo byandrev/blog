@@ -21,7 +21,9 @@ export default function Code({
   const isDark = theme === "dark";
 
   return (
-    <div className={`rounded-md border dark:border-slate-700 shadow-lg overflow-hidden ${className}`}>
+    <div
+      className={`rounded-md overflow-hidden shadow-2xl shadow-gray-300 dark:shadow-neutral-950 ${className}`}
+    >
       <SyntaxHighlighter
         language={language}
         showLineNumbers

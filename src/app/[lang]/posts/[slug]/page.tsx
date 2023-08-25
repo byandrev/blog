@@ -33,7 +33,7 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
               {post.excerpt ? <p className="mt-2">{post.excerpt}</p> : null}
             </header>
 
-            <hr className="mt-4 border-gray-200 border-[1.5px] dark:border-slate-700" />
+            <hr className="mt-4 border-gray-200 border-[1.5px] dark:border-neutral-800" />
 
             <PostContent content={post.content} />
           </article>
