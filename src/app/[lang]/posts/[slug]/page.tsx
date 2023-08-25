@@ -7,6 +7,7 @@ import Container from "@/components/Container";
 import PostContent from "@/components/PostContent";
 import { Post } from "@/interfaces/Post";
 import getPost from "./getPostService";
+import Link from "next/link";
 
 type Props = {
   params: { slug: string; lang: string };
@@ -25,12 +26,20 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
             <header>
               <h1 className="text-4xl font-bold">{post.title}</h1>
 
-              <time className="flex capitalize mt-2 text-gray-500 dark:text-slate-400">
+              <time className="flex capitalize mt-2 text-sm text-gray-500 dark:text-gray-300">
                 {post.date &&
                   dayjs(post.date).locale(lang).format("MMMM D, YYYY")}
               </time>
 
               {post.excerpt ? <p className="mt-2">{post.excerpt}</p> : null}
+
+              <Link
+                target="_blank"
+                className="block mt-4 text-sm font-bold hover:underline hover:text-primary"
+                href={`https://github.com/byandrev/blog/blob/main/src/posts/${lang}/${post.slug}.mdx`}
+              >
+                {t("post_error")}
+              </Link>
             </header>
 
             <hr className="mt-4 border-gray-200 border-[1.5px] dark:border-neutral-800" />
