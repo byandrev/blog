@@ -3,6 +3,11 @@ type Link = {
   url: string;
 };
 
+type Project = {
+  name: string;
+  url: string;
+};
+
 export const userLinks: Link[] = [
   {
     text: "Github",
@@ -15,5 +20,20 @@ export const userLinks: Link[] = [
   {
     text: "Instagram",
     url: "https://instagram.com/byandrev",
+  },
+];
+
+export const USER_PROJECTS: Project[] = [
+  {
+    name: "RPCIDE",
+    url: "https://rpcide.cloud",
+  },
+  {
+    name: "TomatoZen",
+    url: "https://tomatozen.vercel.app/",
+  },
+  {
+    name: "MemesGenerator",
+    url: "https://memesgeneratorapp.vercel.app/",
   },
 ];

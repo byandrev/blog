@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-
 import Container from "@/components/Container";
+import Link from "@/components/Link";
+import { USER_PROJECTS } from "@/config";
 import { useTranslation } from "../i18n";
 
 type Props = {
@@ -17,6 +17,17 @@ export default async function Home({ params: { lang } }: Props) {
           <h1 className="text-2xl font-bold">{t("title")}</h1>
           <p>{t("description")}</p>
           <p>{t("phrase")}</p>
+          <p>{t("last_projects")}:</p>
+
+          <ul className="list-disc pl-6">
+            {USER_PROJECTS.map((project) => (
+              <li key={project.url}>
+                <Link href={project.url} target="_blank">
+                  {project.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </>
