@@ -23,6 +23,10 @@ type Props = {
 async function RootLayout({ children, params: { lang = "es" } }: Props) {
   return (
     <html lang={lang} dir={dir(lang)}>
+      <head>
+        <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+      </head>
+
       <body
         className={`bg-white dark:bg-neutral-900 text-gray-700 dark:text-gray-200 antialiased ${font.className}`}
       >

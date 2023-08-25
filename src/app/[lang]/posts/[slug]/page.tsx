@@ -3,11 +3,10 @@ import "dayjs/locale/es";
 import Image from "next/image";
 
 import { useTranslation } from "@/app/i18n";
-import Container from "@/components/Container";
 import PostContent from "@/components/PostContent";
 import { Post } from "@/interfaces/Post";
-import getPost from "./getPostService";
 import Link from "next/link";
+import getPost from "./getPostService";
 
 type Props = {
   params: { slug: string; lang: string };
@@ -19,7 +18,7 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
   const { t } = await useTranslation(lang);
 
   return (
-    <Container>
+    <div>
       {post ? (
         <div>
           <article>
@@ -60,7 +59,7 @@ export default async function PostPage({ params: { slug, lang } }: Props) {
           </div>
         </div>
       )}
-    </Container>
+    </div>
   );
 }
 
